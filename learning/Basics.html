@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning JS</title>
+</head>
+<body>
+	<h1>Basics In JS</h1>
+	<br>
+	<p>Today I was refering W3 schools and learning JavaScript Basics</p>
+	<br>
+	<P>So far I have learned till "OBJECTS" and implemented what I learned today</P>
+	<p id='id1'> Content</p>
+	<button type="button" onclick="MyFunction()">Click to change content</button>
+
+	<p id='id2'> A=40 and B=60 => A + B = ?</p>
+	<button type="button" onclick="document.getElementById('id2').innerHTML=x">Click to see result</button>
+
+	<p id='id3'> First name : ASHIK </p>
+	<button type="button" onclick=details()>Click to see Fullname and details</button>
+	<br>
+	<br>
+	<h3>Events</h3>
+	<button type="button" onclick="this.innerHTML=Date()">onclick- The Time is?</button>
+	<br><br>
+	<!--<button type="button" onchange="this.innerHTML=Date()">onchange- The Time is?</button>-->
+	<script>
+		var x=5,y="ZAIGO";
+		document.write("<br>"+"<br>"+"Document Write Output :"+x+x);
+		var obj={fname:"ASHIK",lname:"ALI",age:"22", fullname :function (){
+			return this.fname + " " + this.lname;
+			}
+		};
+		var n=obj.fname,a=obj.age;
+		var name=obj.fullname();
+		
+		
+		function MyFunction(){
+			document.getElementById('id1').innerHTML="Content Changed as " + y;
+		}
+		
+		function Param(a,b){
+			return a+b;
+		} 
+		x=Param(40,60);
+
+		function details(){
+			document.getElementById('id3').innerHTML= "full name : "+name+" and age :"+ a;	
+		}
+
+	</script>
+
+
+</body>
+</html>
