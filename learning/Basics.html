@@ -47,8 +47,120 @@
 			document.getElementById('id3').innerHTML= "full name : "+name+" and age :"+ a;	
 		}
 
+
+
 	</script>
 
+<h2>10/03/21</h2>
+<h3>Events</h3>
+	<br>
+	<p>onclick</p>
+	<button type="button" onclick="this.innerHTML=Date()">onclick- The Time is?</button>
+	<br>
+	<p>onchange - lower to upper case</p>
+	<input type="text" id="id4" onchange="Change()">
+	<br>
+	<p>Mouseover/mouseout</p>
+	<h2 onmouseover="style.color='blue'" onmouseout="style.color='red'">Mouse over to see changes</h2>
+	<p>onload event used in Body tag</p>
 
+
+	<p>JS strings</p>
+	
+	<p id='s1'>"ashik,arul,jabez"</p>
+	<button type="button" onclick="slen()">click to see length of string</button>
+	<p id='s2'>"ashik,arul,jabez"</p>
+	<button type="button" onclick="fsearch()">click to see position of string arul in a string</button>
+	<p id='s3'>"ashik,arul,jabez"</p>
+	<button type="button" onclick="extr()">click to exctract string "jabez"</button>
+	<p id='s4'>"ashik,arul,jabez,arul"</p>
+	<button type="button" onclick="rep()">click to replace</button>
+	<p>Below shows case converting, concatinating, trim, string padding, converting String to array</p>
+	<p id='s5'>Remaining string functions</p>
+	<button type="button" onclick="remstrf()">Click me to see remaining string functions</button>
+
+	<p id='a1'>Remaining string functions</p>
+	<button type="button" onclick="arr()">array</button>
+	
+	<script>
+		function Change(){
+			var x = document.getElementById("id4");	
+			x.value = x.value.toUpperCase();
+		}
+
+		function LoadFunction(){
+			alert("This is is using onload event");
+		}
+		function slen()
+		{
+			var str="ashik,arul,jabez";
+			var slen=str.length;
+			document.getElementById('s1').innerHTML=slen;
+		}
+
+		function fsearch()
+		{
+			var str="ashik,arul,jabez,arul";
+			var f= str.indexOf("arul");
+			var s= str.search("arul");
+			var lf= str.lastIndexOf("arul");
+			document.getElementById('s2').innerHTML= "find :" + f + ", search :" + s + ", lastfind :" +lf;
+		}
+
+		function extr()
+		{
+			var str="ashik,arul,jabez,arul";
+			var sl= str.slice(11,16);
+			var sg= str.substring(11,16);
+			var ss= str.substr(11,5);
+			document.getElementById('s3').innerHTML= "slice : " + sl + ", substring : " + sg + ", substr : " +ss;
+		}
+
+		function rep()
+		{
+			var str="ashik,arul,jabez,arul";
+			var re= str.replace("jabez","Ranjith");
+			var re2= str.replace(/arul/g,"Riyaas");
+			document.getElementById('s4').innerHTML= "jabez replaced : " + re + "<br>"+" arul gloabal replace : " + re2;
+		}
+
+		function remstrf()
+		{
+			var str ="ashik,arul,jabez,arul";
+			var txt ="    RANJITH   " ;
+			var n="5";
+			var upc =str.toUpperCase();
+			var lcs =txt.toLowerCase();
+			var trm =txt.trim();
+			var sspg =n.padStart(3,0);
+			var sepg =n.padEnd(3,0); 
+			var cat = str.charAt(4);
+			var prop = str[4];
+			var sta = str.split(",");
+			document.getElementById('s5').innerHTML="Uppercase :" + upc + "<br>" + "Lowercase :" + lcs + "<br>" + "Trim :" + trm + "<br>" +
+			 "string start padding :" + sspg + "<br>" + "string end padding :" + sepg + "<br>"+ "char position :"+cat + "<br>" +  "Property value :"+ prop + "<br>"+
+			 "String to array :" + sta;
+		}
+
+		function arr()
+		{
+			var ar=[0,1,2,3,4,5,6];
+			var ac=ar[1];
+			var push=ar.push('7');
+			document.getElementById('a1').innerHTML="array is : " + ar + "<br>" + "accessing array[1] : "+ ac + "<br>" +
+			"Push value :" push;
+
+			// var arr2=["arul","ashik","jabez"];
+			// var alen=arr2.length;
+			// text = "<ul>";
+			// arr2.ForEach(loop); 
+			// text += "</ul>";
+
+			// function loop()
+			// {
+			// 	text +="<li>" + value + "</li>";
+			// }
+		}
+</script>
 </body>
 </html>
