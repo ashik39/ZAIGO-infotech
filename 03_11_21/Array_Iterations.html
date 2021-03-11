@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array Iteration</title>
+</head>
+<body>
+
+<h2>Array Iteration</h2>
+
+<p id="ai1">Array Iteration<p>
+	<button type="button" onclick="aiterate()">Array Iteration @ one click </button>
+
+	<script>
+		
+		function aiterate()
+		{
+			var arr = ["intel","lenovo","HP","Mac","lenovo"];
+			
+			var txt="";
+			arr.forEach(func);
+
+			function func(value)
+			{
+				txt = txt + value +"<br>";
+			}
+
+			var arr1=[35,34,35,56,86];
+			arr2 = arr1.map(func1);
+
+			function func1(value)
+			{
+				return value+2;
+			}
+
+			var arr3=[10,12,15,20,23];
+			arr4=arr3.filter(func2);
+
+			function func2(value)
+			{
+				return value>=15
+			}
+
+
+
+
+			document.getElementById("ai1").innerHTML="<b>forEach(function) : </b>" +"<br><br>" + txt + "<br><br>"+ "<b>map(function)-creates new array :<br>Original array :</b> " + arr1+"<br><br>"+"<b>Map created array 2 added:</b> "+ arr2 + "<br><br>" + "<b>The filter() method creates a new array with array elements that passes a test Value>=15 : </b>" + arr4;
+		}
+
+	</script>
+</body>
+</html>
