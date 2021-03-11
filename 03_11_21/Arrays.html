@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays</title>
+</head>
+<body>
 
+<h2>11/03/21</h2>
+	<h3>ARRAYS</h3>
+	<p id='ar1'>Arrays</p>
+	<button type="button" onclick="arr()">Try</button>
+	
+	<script>
+		
+	function arr()
+		{
+			var ar1=[0,1,2,3,4,5,6];
+			var arlen=ar1.length;
+			var ar2=[];
+			var i; 
+			for (i = 0; i < arlen; i++ )
+			{
+				ar2[i]=ar1[i];
+
+			}
+
+			var ac=ar1[2];
+			var pu=ar2.push(8);
+			var pushed=ar2;
+			
+			
+			var arr2=["arul","ashik","jabez"];
+			var alen=arr2.length;
+			text = "<ul>";
+			arr2.forEach(loop); 
+			text += "</ul>";
+
+			function loop(value)
+			{
+				text +="<li>" + value + "</li>";
+			}
+
+			document.getElementById('ar1').innerHTML="array is : " + ar1 + "<br>" + "accessing array[2] : "+ ac + "<br>" + "Push value :" + pu + "<br>" + "Array after push : "+ pushed + "<br><br>" + "New array  : "+ arr2 + "<br>" + "Length of new array : "+ alen+ "<br>" +"Output using forEach function : "+ text; 
+		}	
+
+	</script>
+</body>
+</html>
