@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS ARRAY SORTING</title>
+</head>
+<body>
+
+		<h2>Array Sorting</h2>
+
+	<p id="sort1">Array Sort<p>
+	<button type="button" onclick="sorting()">SORTING @ one click </button>
+
+	<script>
+		function sorting()
+		{
+			var names=["Ejjas","Catherin","Dennis","Bharani"];
+			var names0=["Ejjas","Catherin","Dennis","Bharani"];
+			names0.sort();
+
+			var names1 =["Ejjas","Catherin","Dennis","Bharani"];
+			names1.reverse();
+
+			var num = [1,0,2,9,8,4,3];
+			var num0 = [1,0,2,9,8,4,3];
+			num0.sort(function(a,b){return a-b});
+
+			var num1 = [1,0,2,9,8,4,3];
+			num1.sort(function(a,b){return b-a});
+
+			document.getElementById('sort1').innerHTML="<b>Original string array :</b> " + names +"<br>"+"<b>Sorted array : </b>" + names0 +
+			"<br>" + "<b>Reverse array : </b>"+ names1 +"<br>" + "<b>Original number array : </b> "+ num+"<br>"+ "<b>Ordered Number : </b>"+
+			num0 +"<br>" + "<b>Descending order array : </b>" + num1;
+
+		}
+
+	</script>
+</body>
+</html>
