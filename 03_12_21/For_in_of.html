@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For in and of</title>
+</head>
+<body>
+
+<p id="Fi1">For in output<p>
+	<button type="button" onclick="Fi()">For in @ one click</button>
+
+	<p id="Fo1">For of output<p>
+	<button type="button" onclick="Fo()">For of @ one click</button>
+
+	<script>
+		
+		function Fi()
+		{
+			var att={Name : "SAMSUNG", model : "SM237", product : "Television"};
+			var i;
+			var out="";
+			for (i in att)
+			{
+				out += att[i] + "<br>";
+
+			}
+
+			document.getElementById('Fi1').innerHTML="<b> Values obtained by using objects in loop : "+"<br>"+ out;
+		}
+
+		function Fo()
+		{
+			let att=["LENOVO","LE768","LAPTOP"];
+			let i;
+			let out="";
+			for (i of att)
+			{
+				out += i + "<br>";
+
+			}
+
+			document.getElementById('Fo1').innerHTML="<b> Values obtained by using values in loop : "+"<br>"+ out;
+		}
+	</script>
+</body>
+</html>
