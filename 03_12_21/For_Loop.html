@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For Loop</title>
+</head>
+<body>
+
+	<h2>For Loop</h2>
+	<p id="FL1"><p>
+	<button type="button" onclick="FL1()">For Loop @ one click</button>
+
+	<script>
+		function FL1()
+		{
+			var ar=["A","B","C","D","E","F"];
+			var temp=" ";
+
+			for(i=0; i<ar.length ; i++)
+			{
+				temp += ar[i] +"<br>";
+			}
+
+			document.getElementById("FL1").innerHTML="<b>For Loop : " +"<br>"+  temp;
+
+		}
+	</script>
+</body>
+</html>
