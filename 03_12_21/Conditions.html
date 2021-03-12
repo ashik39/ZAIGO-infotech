@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conditions</title>
+</head>
+<body>
+
+	<h2>Conditions </h2>
+	<p id ="C2"></p>
+	<p id="C1"><p>
+	<button type="button" onclick="cond()">Condition statments @ one click</button>
+
+	 <script>
+	 	function cond()
+	 	{
+	 		var a=12,b=10,c="Hi";
+	 		document.getElementById('C2').innerHTML="Condition : A=12,B=10,C='hi'";
+
+	 		if (a==b)
+	 			{
+	 				document.getElementById("C1").innerHTML="A and B are equal";
+	 			}
+	 		else if(b==c)
+	 		{
+	 			document.getElementById("C1").innerHTML="B and C are equal";
+	 		}
+	 		else
+	 		{
+	 			document.getElementById("C1").innerHTML="A,B and C all are different";
+	 		}
+	 	}
+	 </script>
+</body>
+</html>
