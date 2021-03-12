@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>While and Do While</title>
+</head>
+<body>
+
+		<h2>While and Do while</h2>
+
+	<p id="W">while loop output<p>
+	<button type="button" onclick="wi()">while @ one click</button>
+
+	<p id="DW">do while output<p>
+	<button type="button" onclick="dwi()">do while @ one click</button>
+
+	<script>
+		
+		function wi()
+		{
+			var whi=["hi","hello","how","are","you"];
+			var i=0;
+			var out="";
+			while (i < whi.length)
+			{
+				out += whi[i] + "<br>";
+				i++
+
+			}
+
+			document.getElementById('W').innerHTML="<b> while loop output : "+"<br>"+ out;
+		}
+
+		function dwi()
+		{
+			let att=["I am","fine","and","how","are","you"];
+			let i=0;
+			let out="";
+			do
+			{
+				out += att[i] +"<br>";
+				i++;
+
+			}
+			while (i < att.length);
+			
+
+			document.getElementById('DW').innerHTML="<b> do while loop output : "+"<br>"+ out;
+		}
+	</script>
+
+</body>
+</html>
