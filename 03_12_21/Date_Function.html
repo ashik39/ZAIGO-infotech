@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Function</title>
+</head>
+<body>
 
+<h2> 03_12_2021</h2>
+	<h2>JS Date</h2>
+
+	<p id="D1">Date Functions<p>
+	<button type="button" onclick="dates()">Date Function</button>
+
+	<script>
+		function dates()
+		{
+			var d1 = new Date();
+			var sd = new Date(2025,0,24,08,30,45,35);
+			var diso = new Date("99,01,24");
+			var sdt = new Date("01/24/1999");
+			var ldt = new Date('Jan 25 99'); 
+			var gyr = d1.getFullYear();
+			var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			var gmt = d1.getMonth();
+			var gdt = d1.getDate();
+			var ghr = d1.getHours();
+
+			document.getElementById("D1").innerHTML="System date : " + d1 + "<br>" + "Specified Time : " + sd + "<br>"+
+			"<b>Date strings</b>"+ "<br>" + "Date ISO fomrat : "+ diso+ "<br>" + "Short date format : " + sdt + "<br>" + "Long date fomat : " + ldt + "<br>" + "<b>Date Methods :</b>" + "<br>" + "Date Get Methods: " + "<br>" + "Get year : " +gyr+
+			"<br>" + "Get Month : " + months[gmt]  + "<br>" + "Get Date : " + gdt+ "<br>" + "Get Hour : "+ ghr  ;
+
+		}
+
+
+	</script>
+</body>
+</html>
