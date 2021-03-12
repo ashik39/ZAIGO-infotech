@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regular Expressions</title>
+</head>
+<body>
+
+<h2>Regular Expression</h2>
+	<ul>
+		<li>i - performs case insensitivity</li>
+		<li>g - global match search</li>
+		<li>test() - Return True if text found in string</li>
+	</ul>
+	<p id="RE">Regular Expression<p>
+	<button type="button" onclick="regex()">Regular Expression @ one click</button>	
+
+	<script>
+		function regex()
+		{
+			var str = "Hello There is sun shining there is moon glowing";
+
+			var i = str.search(/sun/i);
+
+			var g= str.replace(/there/g,"replaced");
+
+			var t= /e/.test(str);
+
+			document.getElementById('RE').innerHTML="RE - i finding position of search : " + i +"<br>" +
+			"RE - g global match replacing there : "+g +"<br>" + "RE - test() returns true if 'e' found : "+ t;
+		}
+	</script>
+</body>
+</html>
