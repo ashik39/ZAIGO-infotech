@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boolean</title>
+</head>
+<body>
+
+<h2>Boolean</h2>
+	<p id="B1">BOOLEAN<p>
+	<button type="button" onclick="bool()">Boolean @ one click</button>
+
+	<script>
+		function bool()
+		{
+			var arr = [0,1,-1,-0,"true",""];
+			var num = 10 / "H";
+
+			var zer = Boolean(arr[0]);
+			var one = Boolean(arr[1]);
+			var none = Boolean(arr[2]);
+			var nzer = Boolean(arr[3]);
+			var str = Boolean(arr[4]);
+			var emstr = Boolean(arr[5]);
+			//var nan = Boolean(arr[6]);
+
+			document.getElementById('B1').innerHTML="0 returns : " + zer + "<br>" +  "1 returns : "+one+ "<br>"+"-1 returns : " + none + "<br>" +"-0 returns : "+nzer+ "<br>"+"\"true\" String returns : " + str + "<br>" + "Empty String returns : "  + emstr + "<br>" + "10 /\"H\" Returns : "+ num;
+		}
+	</script>
+</body>
+</html>
