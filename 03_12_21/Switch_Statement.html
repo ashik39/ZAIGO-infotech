@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch Statement</title>
+</head>
+<body>
+<h2>SWITCH STATEMNT</h2>
+	 <p id="SW1"><p>
+	<button type="button" onclick="swit()">Switch statments @ one click</button>
+
+	<script>
+		function swit()
+		{
+			var s=[19,20,30];
+			var  txt;
+
+			switch (s[1])
+			{
+				case 19:
+				txt="19th century";
+				break;
+
+				case 20:
+				txt="20th century";
+				break;
+
+				case 30:
+				txt="30th century";
+				break;
+
+				default:
+				txt="Invalid Input";
+			}
+			document.getElementById('SW1').innerHTML="Switch Resturns the value of true expression : " + txt;
+		}
+	</script>
+
+</body>
+</html>
