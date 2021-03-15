@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this key</title>
+</head>
+<body>
+
+<h2>this Keyword</h2>
+
+	<p id="tk1">This Keyword example 1</p>
+	<p id="tk2">This Keyword example 2</p>
+
+	<button type="button" onclick="ThisKey()">Click me</button>
+	<script>
+		function ThisKey()
+		{
+			var obj = {n1 : 12,n2:18, add :function(){return this.n1+this.n2}};
+
+			document.getElementById('tk1').innerHTML="this key output in same object:" + obj.add();
+
+			var obj2={func : function(){
+				return this.a + this.b;
+			}};
+
+			var obj3={a : 20, b:30};
+
+			document.getElementById('tk2').innerHTML="this key output in different objects :" + obj2.func.call(obj3);
+		}
+	</script>
+</body>
+</html>
