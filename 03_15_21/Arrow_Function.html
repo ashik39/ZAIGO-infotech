@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arrow_Function</title>
+</head>
+<body>
+
+	<h2>Arrow Functions</h2>
+	<p>Arrow Function allow us to declare a function in easy way</p>
+	<p id="AF">Arrow function<p>
+	<button type="button" onclick="ArrFun()">Arrow function@ one click</button>	
+
+	<script>
+		function ArrFun()
+		{
+			var a =4;
+			var funname=function(){return 4+2};
+			var funwp=() =>{return 4-2};
+			var fwop= a =>{return 10*a};
+			var fwob= a => 20*a;
+			document.getElementById('AF').innerHTML="<b>Values returned by arrow functions<br> "+ "<br>with function keyword :"
+			+funname()+"<br>Without function name :" +  funwp() +"<br>without parentheses : "+fwop(6)+"<br>without set bracket :"+
+			fwob(6);
+
+		}
+	</script>
+</body>
+</html>
