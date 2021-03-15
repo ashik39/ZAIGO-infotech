@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error_Handling</title>
+</head>
+<body>
+
+<p id="ER">ERRORS<p>
+	<input type="text" id="num" placeholder="Enter">
+	<button type="button" onclick="EH()">JS ERRORS-Submit</button>
+	<p id="msg">Message</p>
+
+	<script>
+		
+		function EH()
+		{
+			var n = document.getElementById("num").value;
+			var msg = document.getElementById("msg");
+			try
+			{
+				if (n=="")
+				{
+					throw "Empty";
+				}
+				if (isNaN(n))
+				{
+					throw "you entered string or character..Kindly enter Number";
+				}	
+				else
+				{
+					msg.innerHTML="SUCCESSS";
+				}
+			}
+			catch(err)
+			{
+				document.getElementById('msg').innerHTML=err;
+			}
+			finally
+			{
+				document.getElementById('num').value="";
+			}
+		}
+
+	</script>
+</body>
+</html>
