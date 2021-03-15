@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope</title>
+</head>
+<body>
+<h2>SCOPE</h2>
+	<p>Scope of variables shown here</p>
+	<p id="SC1"></p>
+	<p id="SC2"></p>
+	<p id="SC3"></p>
+	<button type="button" onclick="LScope()">Click to know Local Scope</button> 
+	<button type="button" onclick="GScope()">Click to know Global Scope</button> 
+
+	<script>
+		function LScope()
+		{
+			var x = 10;
+			var y = 20;
+
+			var z = x+y;
+
+			document.getElementById('SC1').innerHTML="Variable inside a function will have local scope<br>"+"Variable inside a function can't be accessed by outside field <br> Sum of"+x+" and "+y+"Y inside a function :"+z;
+
+		}
+
+		function GScope()
+		{
+		var x=50;
+		var y =40;
+		var z= x+y;
+		document.getElementById('SC2').innerHTML="Variable outside a function will have global scope<br>"+"Variable outside a function can be accessed only by outside field <br> Sum of "+x+" and "+y+" inside a function :"+z;
+		}
+	</script>
+</body>
+</html>
