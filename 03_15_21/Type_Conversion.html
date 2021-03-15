@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Type_Conversion</title>
+</head>
+<body>
 
+<h2>Type conversion</h2>
+
+
+	<p id="TC1">Type converion will be shown here</p>
+	<p id="TC2">To verify a type of variable constructor can be used</p>
+	<button type="button" onclick="typecon()">For Type Conversion click here</button>
+
+	<script>
+		function typecon()
+		{
+			var n=12;
+			var s="ashik";
+			var b="true";
+			var ns="345"
+			var arr=[1,2,3,45,5]
+			var person = {
+  firstName : "John",
+  lastName  : "Doe",
+  age     : 50,
+  eyeColor  : "blue"
+};
+
+			document.getElementById('TC1').innerHTML="Type of variables shown here:"+"<br>"+ typeof n + "<br>" + typeof s + "<br>"+
+			typeof b+ "<br>"+typeof person +"<br>"+"Constructor property shown below :" + n.constructor + "<br>"+s.constructor+"<br>"+b.constructor+"<br>"+person.constructor+"<br>"+ "<br>"+"Now we gonna change a type of variables";
+
+			document.getElementById('TC2').innerHTML="<br> number to string : "+ String(n)+"<br> string to number  : "+
+			Number(ns) + "<br>  Boolean to Numbers : " + Number(true);
+
+}
+	</script>
+</body>
+</html>
