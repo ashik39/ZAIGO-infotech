@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regexp-exec()</title>
+</head>
+<body>
+
+<p id="RE2">Regexp-exec()<p>
+	<button type="button" onclick="Exe()">Regexp-exec()</button>
+	<p>exec() - it search for text and returns as a object</p>
+
+	<script>
+		function Exe()
+		{
+			var arr="Gate is open till 10 o clock";
+
+			var obj= /is/.exec(arr);
+
+			document.getElementById('RE2').innerHTML="Text ["+obj[0]+"] is found in position["+obj.index+"] :"+obj.input;
+		}
+
+	</script>
+</body>
+</html>
