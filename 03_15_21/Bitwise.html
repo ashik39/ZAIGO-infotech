@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bitwise</title>
+</head>
+<body>
+<h2>Bitwise</h2>
+
+	<p id="BW1">Bitwise Operation Shown Here</p>
+	<button type="button" onclick="BitW()">Click for Bitwise</button>
+
+	<script>
+		function BitW()
+		{
+			var OR=1 | 0;
+			var AND=1 & 0;
+			var NOT = ~1;
+			var EXOR= 1 ^ 0;
+
+			document.getElementById("BW1").innerHTML="OR - 1 | 0 :"+OR+"<br>AND - 1 & 0 :"+AND+"<br>NOT - ~4 : "+NOT+
+			"<br>EXOR - 1^0 : "+EXOR;
+		}
+	</script>
+
+</body>
+</html>
