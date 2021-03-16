@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_JSON</title>
+</head>
+<body>
+
+<h2>JS JSON</h2>
+	<p  id="json">JSON here</p>
+
+	<button onclick="Json()">Click to know JSON</button>
+
+	<script>
+		function Json()
+		{
+			var text = '{"arr":['+'{"fname":"ashik","lname":"ali"},'+
+			'{"fname":"zaigo","lname":"infotech"},'+'{"fname":"lenovo","lname":"L460"}]}';
+
+			var object=JSON.parse(text);
+
+			document.getElementById("json").innerHTML="JSON is often used for data sent from server<br>"+
+			"Object in array shown using JSON :"+object.arr[1].fname +" "+ object.arr[1].lname;
+		}
+	</script>
+</body>
+</html>
