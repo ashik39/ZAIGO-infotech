@@ -14,13 +14,21 @@
 		{
 			constructor(a,b)
 			{
-				this.a=20;
+				this.a=40;
 				this.b=30;
 			}
 
 			add()
 			{
 				return this.a+this.b;
+			}
+			sub()
+			{
+				return this.a-this.b;
+			}
+			mul()
+			{
+				return this.a*this.b;
 			}
 		}
 
@@ -29,7 +37,7 @@
 		function adds()
 		{
 			let obji=new clasname(5,6);
-			document.getElementById('CL').innerHTML="Addition using class : " + obji.add();
+			document.getElementById('CL').innerHTML="a=40 <br> b=30 <br>"+"Addition using class fun1  add : " +  obji.add() +"<br>subtract using class fun2  : " + obji.sub()+"<br>multiply using class fun3  : " + obji.mul();
 		}
 
 	</script>
