@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body style="text-align: center;">
+<h2>FORM VALIDATION</h2>
+<form method="get" action="#" onsubmit="return validate()">
+   <p>Enter Name   :</p> <input type="text"  id="n">
+   <p>Enter Email ID :</p> <input type="email"  id="em">
+    <p>Enter Phone number :</p> <input type="text"  id="pn">
+    <p>Enter address:</p> <input type="text"  id="ad">
+   
+   <br><br>
+   <input type="SUBMIT" name="submit" value="SUBMIT">&nbsp;
+   <input type="RESET" name="reset" value="RESET">
+</form>
+
+
+<script>
+    function validate(){
+        let name = document.getElementById('n').value;
+        let email = document.getElementById('em').value;
+        let phone = document.getElementById('pn').value;
+        let add = document.getElementById('ad').value;
+        
+
+        //var emreg = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;  
+
+        if (name != '' && add != '' && phone != '' && email != ''){
+                if(phone.length == 10){
+                    alert("All validation Done");
+                    return true;
+                }
+                else{
+                    alert("Enter 10 digit phone number");
+                    return false;
+                }
+            }
+                
+                else{
+                    alert("All fields are required..");
+                    return false;
+                }
+            }
+</script>
+
+</body>
+</html>
