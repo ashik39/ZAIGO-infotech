@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS CLASSES</title>
+</head>
+<body>
 
+<h2>JS Classes</h2>
+	<p id="CL">Classes Here</p>
+	<button onclick="adds()">click for class</button>
+
+	<script>
+		class clasname
+		{
+			constructor(a,b)
+			{
+				this.a=20;
+				this.b=30;
+			}
+
+			add()
+			{
+				return this.a+this.b;
+			}
+		}
+
+		
+
+		function adds()
+		{
+			let obji=new clasname(5,6);
+			document.getElementById('CL').innerHTML="Addition using class : " + obji.add();
+		}
+
+	</script>
+</body>
+</html>
