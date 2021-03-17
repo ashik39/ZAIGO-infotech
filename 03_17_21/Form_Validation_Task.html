@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script src="script.js"></script>
+    <style type="text/css">
 
+    </style>
+</head>
+<body style="text-align: center;">
+<h2>FORM VALIDATION</h2>
+<div>
+<form method="get" action="#" onsubmit="return validate()" id="regform" >
+    <label for="name">Enter Name   :</label> <input type="text"  id="name"><br><br>
+    <label for="phone">Enter Phone number :</label> <input type="text"  id="phone" ><br><br>
+    <label for="email">Enter Email ID :</label> <input type="email"  id="email"><br><br>
+
+    <label for="qualify">Select Qualification :</label>
+    <select id="qualify" name="qualify" form="regform">
+        <option value="Bachelor of Engineering">B.E</option>
+        <option value="Bachelor of Technology">B.Tech</option>
+        <option value="Bachelor of Science">B.Sc</option>
+        <option value="Diploma">Diploma</option>
+
+    </select><br><br>
+    
+    <label>Select Gender</label><br>
+    <label for="male">Male</label> <input type="radio" name="gender"   value="male"><br>
+    <label for="female">Female</label> <input type="radio" name="gender"   value="female"><br> 
+    <label for="others">Others</label> <input type="radio" name="gender"    value="others"> <br><br>
+
+    
+
+    <label>Choose Hobbies</label><br>
+    <label for="reading">Reading</label> <input type="checkbox" name="hobby"  id="reading" value="Read"><br>
+    <label for="playing">Playing</label> <input type="checkbox" name="hobby"  id="playing" value="Play"><br> 
+    <label for="watching">Watching</label> <input type="checkbox" name="hobby"   id="watching" value="Watch"> <br><br>
+
+    <label for="address">Enter address :</label> <input type="text"  id="address"><br><br>
+   
+   <br><br>
+   <input type="SUBMIT" name="submit" value="SUBMIT">&nbsp;
+   <input type="RESET" name="reset" value="RESET">
+</form>
+</div>
+
+
+<script>
+	
+    function validate(){
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const add = document.getElementById('address').value;
+       // const regex = "/^([a-z\d\.-]+)@([a-z]{2,8})(\.[a-z]{2,8})?$/";
+        const qlfy = document.getElementById('qualify').value;
+
+        //radio
+        const gender = document.getElementsByName('gender');
+        // const male = document.getElementById('male').value;
+        // const female = document.getElementById('female').value;
+        // const others = document.getElementById('others').value;
+
+        //checkbox
+        const hobby = document.getElementsByName('hobby');
+        // const reading = document.getElementById('reading').value;
+        // const playing = document.getElementById('playing').value;
+        // const watching = document.getElementById('watching').value;
+
+
+//alert("All validation Done");
+                    //return true;        
+
+        //var emreg = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;  
+
+        if (name != '' && phone != '' && email != ''){
+                if(phone.length == 10){
+
+                    if(/^([a-z\d\.-]+)@([a-z]{2,8})(\.[a-z]{2,8})?$/.test(email)){
+
+                        if(Boolean(qlfy)){
+
+                            var i,count=0;
+
+                            for(i=0 ; i<gender.length ; i++){
+                                if(gender[i].checked == true){
+                                    count++;
+                                 }
+                            }
+
+                            if(count > 0){
+
+                                var j,num=0;
+
+                                for(j=0 ; j<hobby.length ; j++){
+                                if(hobby[j].checked == true){
+                                    num++;
+                                 }
+                            }
+
+                                if(num > 0){
+
+                                    if(Boolean(add)){
+                                        alert("Validation Done..!");
+                                        return true;
+                                    }
+                                    else{
+                                            alert("Kindly Enter The Address.");
+                                            return false;
+                                        }
+                                }
+                                else{
+                                        alert("Kindly Choose Hobby.");
+                                        return false;
+
+                                    }
+                                }
+                            else{
+                                    alert("Kindly Choose Gender");
+                                    return false;
+                                }
+                            }
+                        else{
+                                alert("Kindly Select Qualification.");
+                                return false;
+                            }
+                        }
+                    else{
+                            alert("Kindly Enter Proper E-Mail ID.");
+                            return false;
+                        }
+                                    
+                    }
+
+                else{
+                        alert("Enter 10 digit phone number");
+                        return false;
+                    }
+                }
+                
+            else{
+                    alert("Type the required fields..");
+                    return false;
+                }
+            }
+</script>
+
+</body>
+</html>
