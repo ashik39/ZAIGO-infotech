@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_OBJECTS</title>
+</head>
+<body>
+
+<h2>Object definition</h2>
+<p id="def"></p>
+
+<script>
+var person = {
+  fName : "ashik",
+  lName  : "ali",
+  age     : 22,
+};
+
+document.getElementById("def").innerHTML = person.fName + " " + person.lName;
+</script>
+
+<h2>Object Properties</h2>
+
+<p id="prop"></p>
+
+<script>
+var txt = "";
+var person = {fname:"mikel", lname:"jack", age:22}; 
+var x;
+for (x in person) {
+  txt += person[x] + " ";
+}
+document.getElementById("prop").innerHTML = txt;
+</script>
+
+<h2>Object Method</h2>
+
+<p id="method"></p>
+
+<script>
+
+var person = {
+  firstName: "dennis",
+  lastName : "ritchie",
+  id     : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+document.getElementById("method").innerHTML = person.fullName();
+</script>
+
+<h2>Display Object Properties</h2>
+
+<p id="disp"></p>
+
+<script>
+var x, txt = "";
+var person = {name:"rock", age:40, city:"New York"};
+
+for (x in person) {
+  txt += person[x] + " ";
+};
+
+document.getElementById("disp").innerHTML = txt;
+</script>
+
+<h2>JavaScript Getters and Setters</h2>
+
+<p id="get"></p>
+
+<script>
+
+var person = {
+  firstName: "John",
+  lastName : "cena",
+  language : "english",
+  get lang() {
+    return this.language;
+  }
+};
+
+document.getElementById("get").innerHTML = person.lang;
+</script>
+
+<p id="set"></p>
+
+<script>
+
+var person = {
+  firstName: "harry",
+  lastName : "potter",
+  language : "NO",
+  set lang(value) {
+    this.language = value;
+  }
+};
+
+person.lang = "French";
+
+document.getElementById("set").innerHTML = person.language;
+</script>
+
+
+<h2>Object Constructors</h2>
+
+<p id="demo"></p>
+
+<script>
+
+function Person(first, last, profession) {
+  this.firstName = first;
+  this.lastName = last;
+  this.Job = profession;
+}
+
+// Create a Person object
+var celeb = new Person("ms", "dhoni", "cricketer");
+
+// Display age
+document.getElementById("demo").innerHTML =
+"celebrety is " + celeb.lastName + "."; 
+</script>
+
+
+
+<h2>Objects Prototypes</h2>
+
+<p id="proto"></p>
+
+<script>
+function Person(first, last, age) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+}
+
+Person.prototype.nationality = "Indian";
+
+var actor = new Person("superstar", "Rajni", 60);
+document.getElementById("proto").innerHTML =
+"The nationality of actor is " + actor.nationality; 
+</script>
+
+
+
+
+</body>
+</html>
