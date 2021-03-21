@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_FUNCTIONS</title>
+</head>
+<body>
+
+<h1>FUNCTION DEFIINITIONS</h1>
+<h2>Function expression</h2>
+<p id="exp"></p>
+<script>
+	function express()
+	{
+		return "expression returned";
+	}
+	document.getElementById('exp').innerHTML ="expression returns : " + express();
+
+
+</script>
+
+<h2>Function Hoisting</h2>
+<p id="hoist"></p>
+
+<script>
+	document.getElementById('hoist').innerHTML ="Hoisting returns: " + hoist();	
+
+	function hoist()
+	{
+		return "Function invoked before declaration is hoisting";
+	}
+</script>
+
+<h2>Self invoking function</h2>
+<p id="self"></p>
+
+<script>
+	(function (){
+		const x="Hi I invoked by myself";
+		document.getElementById('self').innerHTML ="Selfinvoke returns : " + x;
+	})();
+</script>
+
+<h2>Function as variable</h2>
+<p id="asvar"></p>
+<script>
+	
+	function variable(a){
+		return "Function used as variable here" +  a;
+	}
+
+	var x = variable(" & I am passed as paramerter");
+
+	document.getElementById('asvar').innerHTML ="Variable function returns : " + x;
+</script>
+
+<h2>Arrow Function</h2>
+<p id="arrfun"></p>
+
+<script>
+	const af = (a,b) => a+b;
+
+	document.getElementById('arrfun').innerHTML ="Arrow function returns : " + af(6,5);
+</script>
+
+<h2>Function Parameters</h2>
+<p id="funpara"></p>
+
+<script>
+	function para(){
+		var i,sum=0;
+
+		for(i=0;i< arguments.length;i++){
+			sum += arguments[i];
+		}
+		return sum;
+	}
+
+	document.getElementById('funpara').innerHTML ="More number of parameters returns : " + para(2,3,5,5,5,);
+</script>
+</body>
+</html>
