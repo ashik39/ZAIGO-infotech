@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class Get and Set</title>
+</head>
+<body>
+
+<h2>Class Getter and setter</h2>
+<p id = "GetSet"></p>
+
+<script>
+	class A{
+		constructor(name){
+			this._name =  name;
+		}
+
+		get nameit(){
+			return this._name;
+		}
+
+		set nameit(v){
+			this._name = v;
+		}
+	}
+
+	let obj = new A("Get name");
+	obj.nameit = "Set name";
+	document.getElementById('GetSet').innerHTML = "Class Getter and Setter class returns: "+obj.nameit;
+</script>
+</body>
+</html>
