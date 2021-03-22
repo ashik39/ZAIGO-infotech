@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FUNCTION INVOCATION</title>
+</head>
+<body>
+
+<h2> FUNCTION INVOCATION</h2>
+<p id="funinvo"></p>
+<p id="funmeth"></p>
+<p id="constfun"></p>
+
+
+<script>
+	function asfun(){
+		const a = 3,b=5;
+		return a+b;
+	}
+
+	document.getElementById('funinvo').innerHTML = "Function as Function returns : "+ asfun();
+
+	const obji= {fname:"ashik",lname:"ali",fullname:function(){
+		return this.fname+" "+this.lname;
+	}}
+
+	document.getElementById('funmeth').innerHTML = "Function as Methods returns : "+ obji.fullname();	
+
+	function constfun(c,f){
+		return "I returned by using "+ c +" "+ f;
+	}
+
+	document.getElementById('constfun').innerHTML = "Constructor Function returns : "+  constfun("Constructor","Function");	
+
+</script>
+
+
+</body>
+</html>
