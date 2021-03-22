@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function Closure</title>
+</head>
+<body>
+
+<h2>Function Closure</h2>
+
+<p id="fclr">0</p>
+<button onclick ="counting()">Count</button>
+
+<script>
+	var closure = (function (){
+		var count = 0;
+		return function() {count += 1; return count;}
+	})(); 
+
+	function counting(){
+		document.getElementById('fclr').innerHTML = "Couter :" +  closure();
+	}
+</script>
+</body>
+</html>
