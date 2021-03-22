@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_ASYNCHRONOUS</title>
+</head>
+<body>
+
+<h2>JS Asynchronous - Callbacks can be effectively used in Asynchronous functions</h2>
+
+<p id = "async">Wait for 4 seconds</p>
+<h1 id = "async2"></h1>
+
+<script>
+	setTimeout(cbfunction,4000);
+
+	function cbfunction(){
+		document.getElementById('async').innerHTML = "Hello Welcome to JS_ASYNCHRONOUS";
+	}
+
+	setInterval(cbfunction2,1000);
+
+	function cbfunction2(){
+		var d =  new Date();
+		var time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+		document.getElementById('async2').innerHTML = time;
+	}
+</script>
+</body>
+</html>
