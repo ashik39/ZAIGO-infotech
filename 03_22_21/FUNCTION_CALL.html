@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function call</title>
+</head>
+<body>
+
+<h1>Function Call() method</h1>
+
+<p id='funcall'><p>
+
+<script>
+	const obj = {fullname :function (){
+		return this.fname + " " + this.lname;
+	}}
+
+	 const obj1 = {fname : "MS" , lname : "DHONI"};
+
+	 const obj2 = {fname : "Hirthik" , lname : "Roshan"};
+
+	 document.getElementById('funcall').innerHTML= "Function call() returns : " + obj.fullname.call(obj1);
+</script>
+</body>
+</html>
