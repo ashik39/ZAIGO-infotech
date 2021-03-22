@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FUNCTION_APPLY_METHOD</title>
+</head>
+<body>
+<h2>Function apply() method-Similar to call() but taking arguments as array</h2>
+
+<p id="funapp"></p>
+
+<p id="funcall"></p>
+
+<script>
+	const obj = {calci : function (a2,b2){
+
+		return "addition : "+ parseInt(this.a1 + this.b1) +"<br> Subtraction : "  + parseInt(a2 - b2) ;
+	}}
+
+	const obj1 = {a1 : 2, b1 : 3 };
+
+	document.getElementById('funapp').innerHTML = "Function apply() returns : "+ obj.calci.apply(obj1,["9","3"]);
+
+	document.getElementById('funcall').innerHTML = "Function call() returns : "+ obj.calci.call(obj1,9,3);
+
+</script>
+</body>
+</html>

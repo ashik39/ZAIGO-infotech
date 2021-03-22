@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CLASS INHERITANCE</title>
+</head>
+<body>
+
+<h2>Class Inheritance - accesing a method in one class from another class </h2>
+
+<p id = "CI"></p>
+
+<script>
+	class  A{
+		constructor(num1,num2){
+			this.n1 =  num1;
+			this.n2 = num2;
+		}
+
+		add(){
+			return this.n1 + this.n2;
+		}
+	}
+
+	class B extends A{
+		constructor(a1,b1){
+			super(a1,b1);
+		}
+
+		show(){
+			return "addition using class inheritance : " + this.add();
+		}
+	}
+
+	let obj = new B(6,6);
+
+	document.getElementById("CI").innerHTML = obj.show();_
+</script>
+</body>
+</html>
