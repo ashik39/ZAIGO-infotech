@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS CASSES</title>
+</head>
+<body>
+
+	<h2>JS CLASS INTRO</h2>
+	<p id="jsclass"></p>
+
+<script>
+	class firstclass{
+		constructor(para1,para2){
+			this.p1 = para1;
+			this.p2 = para2;
+		}
+
+		add(){
+			var para3 = this.p1 + this.p2;
+			return para3;
+		}
+	}
+
+	let addition = new firstclass(4,5);
+	document.getElementById('jsclass').innerHTML = "Class returns : " + addition.add() + "<br>numbers are : " +  addition.p1 +" and " + addition.p2;
+</script>
+</body>
+</html>
