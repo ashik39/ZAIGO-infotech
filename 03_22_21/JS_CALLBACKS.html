@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_CALLBACKS</title>
+</head>
+<body>
+
+<h2>JS Callbacks - calls function as parameter in another function</h2>
+
+<p id = "CB"></p>
+
+<script>
+	function show(result){
+		document.getElementById('CB').innerHTML = "JS Callbacks returns : "+ result;
+	}
+
+	function add(a,b,CallBack){
+		var c = a+b;
+		CallBack(c);
+	}
+
+	add(50,40,show);
+
+</script>
+</body>
+</html>
