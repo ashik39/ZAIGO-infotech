@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM_EVENTS</title>
+</head>
+<body>
+<h2>DOM EVENTS</h2>
+
+<p id="onclk"></p>
+
+<button onclick="onclkfunction()">click me</button>
+<br>
+<br>
+<input type="text" onchange="uppper(this)" placeholder="Enter text to convert upper case">
+
+<p id="mouse" onmouseover="mover()" onmouseout="mout()" onmouseup="mup()" onmousedown="mdown()">Mouse Events here over,click,unclick,moveout to see changes</p>
+
+<script>
+	function onclkfunction(){
+		document.getElementById('onclk').innerHTML = "I am here beacase of  onclick event";
+	}
+
+	function uppper(x){
+		x.value = x.value.toUpperCase(); 
+	}
+
+	function mover(){
+		document.getElementById('mouse').innerHTML = "Mouse Over";
+	}
+
+
+	function mout(){
+		document.getElementById('mouse').innerHTML = "Mouse out";
+	}
+	function mup(){
+		document.getElementById('mouse').innerHTML = "Mouse Up";
+	}
+
+	function mdown(){
+		document.getElementById('mouse').innerHTML = "Mouse Down";
+	}
+</script>
+</body>
+</html>
