@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM_EVENTLISTENER</title>
+</head>
+<body>
+
+<H2>DOM  EVENTLISTENER</H2>
+<p id="id1"></p>
+
+<button id="id2">Many EVENTLISTENER</button>
+<script>
+	var a = document.getElementById('id2');
+	var p = document.getElementById('id1');
+	a.addEventListener('click',clickfun);
+	a.addEventListener('mouseover',overfun);
+	a.addEventListener('mouseout',outfun);
+	a.addEventListener('mousedown',downfun);
+
+	function clickfun(){
+		p.innerHTML = "event-click";
+	}
+
+		function overfun(){
+		p.innerHTML = "event-mouseover";
+	}
+
+		function outfun(){
+		p.innerHTML = "event-mouseout";
+	}
+
+		function downfun(){
+		p.innerHTML = "event-mousedown";
+	}
+
+</script>
+
+</body>
+</html>
