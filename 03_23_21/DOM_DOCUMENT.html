@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM_DOCUMENTS</title>
+</head>
+<body>
+
+<h4>The document object represents your web page.<br>
+
+If you want to access any element in an HTML page, you always start with accessing the document object.</h4>
+<p>Below are few examples for documents</p>
+<p id="docsid"></p>
+
+
+
+<button onclick= "funid()">getElementById</button>
+
+<h2 class="clsname">value will change by class name click button</h2>
+<button onclick= "funclassname()">getElementByClassName</button>
+
+<h2 id="event">value will change by event listener click somewhere on screen</h2>
+<button onclick= "funevent()">addEventListener</button>
+
+<script>
+	function funid() {
+  document.getElementById("docsid").innerHTML = "Output by ID";
+}
+
+
+function funclassname() {
+  var x = document.getElementsByClassName("clsname");
+  x[0].innerHTML = "Element by classname";
+}
+
+function funevent(){
+	document.addEventListener("click", function(){
+  document.getElementById("event").innerHTML = "Event listener here";
+});
+}
+</script>
+</body>
+</html>
