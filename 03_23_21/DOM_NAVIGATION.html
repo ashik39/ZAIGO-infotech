@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM_Navigation</title>
+</head>
+<body>
+
+
+<h1>Copying TEXT in p from h2 using nodes(DOM Navigation)</h1>
+
+<h2 id="h">TEXT</h2>
+<p id="p"></p>
+<h1>Same process using node properties</h1>
+
+<h2 id="h1">TEXT1</h2>
+<p id="p1"></p>
+
+<script>
+	document.getElementById('p').innerHTML = document.getElementById('h').childNodes[0].nodeValue;
+	document.getElementById('p1').innerHTML = document.getElementById('h1').firstChild.nodeValue;
+</script>
+</body>
+</html>
