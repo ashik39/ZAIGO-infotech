@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_SCREEN</title>
+</head>
+<body>
+<h2>JS_SCREEN</h2>
+
+<p id="id1"></p>
+
+<p id="id2"></p>
+
+<p id="id3"></p>
+
+<p id="id4"></p>
+
+<p id="id5"></p>
+
+<p id="id6"></p>
+
+<button onclick="screen()">Click me</button>
+<p>Click button to see screen details</p>
+<script>
+
+	function screen(){
+		document.getElementById('id1').innerHTML = "screen width :" + screen.width;
+		document.getElementById('id2').innerHTML = "screen height :" + screen.height;
+		document.getElementById('id3').innerHTML = "screen avail width :" + screen.availWidth;
+		document.getElementById('id4').innerHTML = "screen avail height :" + screen.availHeight;
+		document.getElementById('id5').innerHTML = "screen color depth :" + screen.colorDepth;
+		document.getElementById('id6').innerHTML = "screen pixel depth :" + screen.pixelDepth;
+	}	
+</script>
+</body>
+</html>
