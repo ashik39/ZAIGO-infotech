@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_TIMING</title>
+</head>
+<body>
+<h1>JS_TIMING</h1>
+<p>click to see alert in 3 seconds</p>
+<button onclick="timeout()">Timeout</button>
+<h2 id = "time"></h2>
+<p id="clock"></p>
+
+<button onclick="start()">Start time</button>
+<button onclick="clearInterval(clk)">Stop time</button>
+<script>
+	var x = 0;
+	function timeout(){
+		var Timeout = setTimeout(alt,3000);
+		function alt(){
+			alert("3 seconds over");
+		}
+	}
+
+	function start(){
+		var clk = setInterval(myTimer ,1000);
+		function myTimer() {
+  		var d = new Date();
+  		document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+	}
+
+	// 	var a = setInterval(check,1000);
+	// 	function check(){
+			
+	// 		document.getElementById('time').innerHTML = x;
+	// 		x = x++;
+	// 		// if (x = 3){
+	// 		// 	clearInterval(a);
+	// 		// }
+		
+	// }
+	}
+
+	
+
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_POPUP_ALERT</title>
+</head>
+<body>
+
+<h2>JS_POPUP_ALERT</h2>
+
+<button onclick="funalert()">Alert Box</button>
+<br><br><p id = "alert"></p>
+<button onclick="funconfirm()">Confirm Box</button>
+<p id = "confirm"></p>
+<br>
+<button onclick="funprompt()">Prompt Box</button>
+<p id="prompt"></p>
+
+
+<script>
+	function funalert(){
+		alert("Hi Alert Box here click OK to proceed");
+		document.getElementById('alert').innerHTML = "Clicked Alert box";
+	}
+
+	var x;
+	function funconfirm(){
+		if(confirm("OKAY or CANCEL?")){
+			txt = "You pressed OKAY";
+		}
+		else{
+			txt = "You pressed CANCEL";
+		}
+
+		document.getElementById('confirm').innerHTML = txt;
+	}
+
+	function funprompt(){
+		var txt1;
+		var name = prompt("Enter \nname :","Name");
+		if (name == null || name == ""){
+			txt1 =  "You Cancelled the prompt";
+		}
+		else{
+			txt1 = "Welcome to" + name + "!!";
+		}
+		document.getElementById('prompt').innerHTML = txt1;
+	}
+</script>
+</body>
+</html>
