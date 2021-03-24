@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_HISTORY</title>
+</head>
+<body>
+
+<h2>JS_HISTORY - contains the history of browser</h2>
+<!--<a href="GO_BACK_PAGE.html">open a file</a>
+	<button id = "id2" oclick="openfile()">Open File</button>-->
+<button id = "id1" oclick="forw()">GO FORWARD</button>
+
+<button oclick="back()">GO FORWARD</button>
+
+<script>
+	function forw(){
+		window.history.forward();
+	}
+	//document.getElementById('id1').addEventListener("mouseover",openfile())
+
+	// function openfile(){
+	// 	window.location.assign("GO_BACK_PAGE.html");
+	// }
+
+	function back(){
+		window.history.back();
+	}
+</script>
+</body>
+</html>
