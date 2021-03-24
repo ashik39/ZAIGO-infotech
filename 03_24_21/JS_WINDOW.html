@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS_WINDOWS</title>
+</head>
+<body>
+
+<h1>JS_WINDOWS</h1>
+
+<button onclick="opennew()">open new window</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="movenew()">move window</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="resizenew()">resize window</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button onclick="closenew()">close window</button>
+
+<script>
+
+	var window1;
+
+	function opennew(){
+		window1 = window.open("","_blank","width=100,height=100");
+		window1.document.write("<p>New 'window' opened</p>");
+	}
+
+	function  closenew(){
+		window1.close();
+	}
+
+
+	function movenew(){
+		window1.moveTo(300, 300);
+		window1.focus();
+		window1.document.write("<p>New 'window' moved</p>");
+	}
+
+	function resizenew(){
+		window1.resizeTo(200,300);
+		window1.focus();
+		window1.document.write("<p>New 'window' resized</p>");
+	}
+</script>
+
+</body>
+</html>
