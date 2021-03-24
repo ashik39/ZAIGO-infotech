@@ -1,1 +1,43 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM_NODES</title>
+</head>
+<body>
+<h2>DOM_NODES</h2>
+
+<div id="divtag1">
+	<p id="one">Number One</p>
+	<p id="two">Number two</p>
+</div>
+
+<div id="divtag2">
+	<p id="p1">para one</p>
+	<p id="p2">para two</p>
+</div>
+
+<button onclick="remove()">Remove paras</button>
+<script>
+	 var para = document.createElement("p");
+	var node = document.createTextNode("Number three - New");
+	para.appendChild(node);
+
+	element =  document.getElementById('divtag1');
+	element.appendChild(para);
+
+	var para1 =  document.createElement("p");
+	var textnode =  document.createTextNode("para three -new");
+	para1.appendChild(textnode);
+
+	var element1 = document.getElementById("divtag2");
+	var child = document.getElementById("p1");
+
+	element1.insertBefore(para1,child);
+
+	function remove(){
+		element1.remove();
+	}
+</script>
+</body>
+</html>
