@@ -80,8 +80,11 @@
             function next3(){
                 var country = document.getElementById('country');
                 var state = document.getElementById('state');
+                var city = document.forms["FormLocation"]["city"].value;
+
                 var countryerror = document.getElementById('countryerror');
                 var stateerror = document.getElementById('stateerror');
+                var cityerror = document.getElementById('cityerror');
                 let page3 = document.getElementById('page3');
                 let page4 = document.getElementById('page4');
                 //console.log(!country.value)
@@ -95,10 +98,35 @@
                     }
                     else{
                         stateerror.style.display = "none";
-                        page3.style.display = "none";  
-                        page4.style.display = "block";      
+                        if(city == ''){
+                            cityerror.innerText = "*Enter city name";
+                        }
+                        else{
+                            cityerror.style.display = "none";
+                            page3.style.display = "none";  
+                            page4.style.display = "block";      
+                        }
                     }
                 }
+
+                document.getElementById('firstnameout').innerHTML ="First Name : " + firstname.value+"<br>"+"<br>";
+                document.getElementById('lastnameout').innerHTML ="Last Name  : " + lastname.value+"<br>"+"<br>";
+                document.getElementById('emailout').innerHTML ="Email ID   : " + email.value+"<br>"+"<br>";
+                document.getElementById('phoneout').innerHTML ="Phone      : " + phone.value+"<br>"+"<br>";
+                document.getElementById('countryout').innerHTML ="Country    : " + country.value+"<br>"+"<br>";
+                document.getElementById('stateout').innerHTML ="State      : " + state.value+"<br>"+"<br>";
+                document.getElementById('cityout').innerHTML ="City      : " + city+"<br>"+"<br>";
+                //"Last Name" +  
+                // var Details = () => {
+                //     const Firstname = document.forms["FormName"]["firstname"].value;
+                //     const Lastname = document.forms["FormName"]["lastname"].value;
+                //     const Email = document.forms["FormContact"]["email"].value;
+                //     const Phone = document.forms["FormContact"]["phone"].value;
+                //     const Country = document.getElementById('country');
+                //     const State = document.getElementById('state');
+                // };
+
+
             }
 
             function prev3(){
@@ -141,7 +169,7 @@
             </div>
 
             <div id="page3" class = "page03">
-                <form>
+                <form name="FormLocation">
                     <label>Country : </label>
                     <select id="country">
                         <option value=''>Select Country</option>
@@ -151,7 +179,7 @@
                         <option value=”EUROPE”>EUROPE</option>
                     </select><br>
                     <p id="countryerror"></p>
-                    <br><br>
+                    <br>
                     <label>State : </label>
                     <select id="state">
                         <option value=''>Select State</option>
@@ -160,7 +188,10 @@
                         <option value="Kerala">Kerala</option>
                         <option value="Rajastan">Rajastan</option>
                     </select>
-                    <p id="stateerror"></p>
+                    <p id="stateerror"></p><br><br>
+                    <label>City : </label>
+                    <input type="text" id="city" name="city" placeholder="City"><br>
+                    <p id="cityerror"></p>
                 </form><br>
                 <div class="inline">
                     <input type="submit" onclick="prev2()" class="leftcorner" value="Prev">
@@ -170,12 +201,13 @@
 
             <div id="page4" class="Page04">
                 <h2>DETAILS</h2>
-                <div id = "outfname"></div>
-                <div id = "outlname"></div>
-                <div id = "outemail"></div>
-                <div id = "outphone"></div>
-                <div id = "outcountry"></div>
-                <div id = "outstate"></div>
+                <div id = "firstnameout"></div>
+                <div id = "lastnameout"></div>
+                <div id = "emailout"></div>
+                <div id = "phoneout"></div>
+                <div id = "countryout"></div>
+                <div id = "stateout"></div>
+                <div id = "cityout"></div>
                 <input type="submit" onclick="prev3()" class="leftcorner" value="Prev">
             </div>
         </div>
