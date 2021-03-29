@@ -3,55 +3,172 @@
     <head>
         <title>Multi Step Form</title>
         <link href="style.css" rel="stylesheet">
-        <script src="script.js"></script>
+        <script>
+            function next1(){
+                // page1.style.display= "none";
+                // page2.style.display= "block";
+                var firstname = document.forms["FormName"]["firstname"].value;
+                //console.log(firstname)
+                var lastname = document.forms["FormName"]["lastname"].value;
+                //console.log(lastname)
+                var fistnameerror = document.getElementById('fistnameerror');
+                var lastnameerror = document.getElementById('lastnameerror');
+                
+                let page1= document.getElementById('page1');
+                let page2= document.getElementById('page2');
+                if(firstname  == ''){
+                    fistnameerror.innerText = "*Enter your first name";
+                }
+                else{
+                    fistnameerror.style.display = "none";
+                    if(lastname  == ''){
+                        lastnameerror.innerText = "*Enter your last name";
+                    }
+                    else{
+                        lastnameerror.style.display = "none";
+                        page1.style.display = "none";
+                        page2.style.display = "block";
+                    }
+                }
+            }
+
+            function prev1(){
+                let page1= document.getElementById('page1');
+                let page2= document.getElementById('page2');
+                page1.style.display = "block";
+                page2.style.display = "none";
+            }
+
+            function next2(){
+                var email = document.forms["FormContact"]["email"].value;
+                //console.log(email)
+                var phone = document.forms["FormContact"]["phone"].value;
+                //console.log(phone)
+                var emailerror = document.getElementById('emailerror');
+                var phoneerror = document.getElementById('phoneerror');
+                
+                let page2= document.getElementById('page2');
+                let page3= document.getElementById('page3');
+
+                if(email == ''){
+                    emailerror.innerText  = "*Email can't be blank";
+                }
+                else{
+                    if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+                        emailerror.innerText  = "*Enter proper mail : (Ex. abcd@mail.com)";
+                    }
+                    else{
+                        emailerror.style.display = "none";
+                        if(phone.length != 10) {                                     //&& /[6-9][0-9]{9}/.test(phone)
+                            phoneerror.innerText  = "*Enter 10 digit mobile number";
+                        }
+                        else{
+                            phoneerror.style.display = "none";
+                            page2.style.display = "none";
+                            page3.style.display = "block";
+                        }
+                }   }
+            }
+
+            function prev2(){
+                let page2= document.getElementById('page2');
+                let page3= document.getElementById('page3');
+                page3.style.display = "none";
+                page2.style.display = "block";
+            }
+
+            function next3(){
+                var country = document.getElementById('country');
+                var state = document.getElementById('state');
+                var countryerror = document.getElementById('countryerror');
+                var stateerror = document.getElementById('stateerror');
+                let page3 = document.getElementById('page3');
+                let page4 = document.getElementById('page4');
+                //console.log(!country.value)
+                if(country.value == ''){
+                    countryerror.innerText =  "*Choose Country";
+                }
+                else{
+                    countryerror.style.display = "none";
+                    if(state.value == ''){
+                        stateerror.innerText =  "*Choose State";
+                    }
+                    else{
+                        stateerror.style.display = "none";
+                        page3.style.display = "none";  
+                        page4.style.display = "block";      
+                    }
+                }
+            }
+
+            function prev3(){
+                let page3 = document.getElementById('page3');
+                let page4 = document.getElementById('page4');
+                page4.style.display = "none";  
+                page3.style.display = "block";
+            }
+        </script>
     </head>
+
+
     <body>
         <div class="container">
-            <div id="pg1" class="page">
-                <form>
-                    <lable>Firstname : </lable><input id="fname" place="Firstname"><br><br>
-                    <lable>Lastname : </lable><input id="fname" place="Firstname"><br><br>
-                </form>
-                <button onclcick="next()" class="right">Next</button>
+            <div id="page1" class="page01">
+                <form name="FormName" method="post">
+                    <lable>Firstname : </lable>
+                    <input type= "text" id="firstname" name="firstname" placeholder="Firstname"><br>
+                    <p id="fistnameerror"></p><br>
+                    <lable>Lastname : </lable>
+                    <input type= "text" id="lastname" name="lastname" placeholder="Lastname"><br>
+                    <p id="lastnameerror"></p>
+                </form><br>
+                <button onclick= "next1()" class="right">Next</button>
             </div>
 <br>
-            <div id="pg2" class = "page">
-                <form>
-                    <label>Email : </label><input id="email" place="Email"><br><br>
-                    <label>Phone : </label><input id="phone" place="Phone"><br><br>
-                </form>
+            <div id="page2" class = "page02">
+                <form name="FormContact">
+                    <label>Email : </label>
+                    <input type="email" id="email" name="email" placeholder="Email" required><br>
+                    <p id="emailerror"></p><br>
+                    <label>Phone : </label>
+                    <input type="text" id="phone" name="phone" placeholder="Phone"><br>
+                    <p id="phoneerror"></p>
+                </form><br>
                 <div class="inline">
-                    <input type="submit" onclcick="prev()" class="leftcorner" value="Prev">
-                    <input type="submit" onclcick="next()" class="rightcorner" value="Next">
+                    <input type="submit" onclick="prev1()" class="leftcorner" value="Prev">
+                    <input type="submit" onclick="next2()" class="rightcorner" value="Next">
                 </div>
             </div>
 
-            <div id="pg3" class = "page">
+            <div id="page3" class = "page03">
                 <form>
                     <label>Country : </label>
                     <select id="country">
-                        <option value=””>Select Country</option>
+                        <option value=''>Select Country</option>
                         <option value=”INDIA”>INDIA</option>
                         <option value=”UK”>UK</option>
                         <option value=”CHINA”>CHINA</option>
                         <option value=”EUROPE”>EUROPE</option>
-                    </select><br><br>
+                    </select><br>
+                    <p id="countryerror"></p>
+                    <br><br>
                     <label>State : </label>
                     <select id="state">
-                        <option value=””>Select State</option>
+                        <option value=''>Select State</option>
                         <option value="Tamil Nadu">Tamil Nadu</option>
                         <option value="Dheli">Dheli</option>
                         <option value="Kerala">Kerala</option>
                         <option value="Rajastan">Rajastan</option>
                     </select>
-                </form>
+                    <p id="stateerror"></p>
+                </form><br>
                 <div class="inline">
-                    <input type="submit" onclcick="prev()" class="leftcorner" value="Prev">
-                    <input type="submit" onclcick="prev()" class="rightcorner" value="Next">
+                    <input type="submit" onclick="prev2()" class="leftcorner" value="Prev">
+                    <input type="submit" onclick="next3()" class="rightcorner" value="Next">
                 </div>
             </div>
 
-            <div id="pg4" class="Page">
+            <div id="page4" class="Page04">
                 <h2>DETAILS</h2>
                 <div id = "outfname"></div>
                 <div id = "outlname"></div>
@@ -59,6 +176,7 @@
                 <div id = "outphone"></div>
                 <div id = "outcountry"></div>
                 <div id = "outstate"></div>
+                <input type="submit" onclick="prev3()" class="leftcorner" value="Prev">
             </div>
         </div>
     </body>

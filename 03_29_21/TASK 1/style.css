@@ -24,3 +24,18 @@ body{
 .inline{
     display: inline-flex;
 }
+
+p{
+    color:red;
+}
+
+.page02{
+    display: none;
+}
+.page03{
+    display: none;
+}
+.Page04{
+    display: none;
+}
+
