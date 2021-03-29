@@ -1,0 +1,26 @@
+body{
+    margin: 150px;
+    text-align: center;
+}
+
+.container{
+    border : solid 2px black;
+    padding : 60px;
+}
+
+.rightcorner{
+    margin : 0px 0px 0px -10px; 
+}
+
+.right{
+    margin : 0px 0px 0px 200px; 
+}
+
+.leftcorner{
+    display: inline;
+    margin: 0px 200px 0px 0px;
+}
+
+.inline{
+    display: inline-flex;
+}

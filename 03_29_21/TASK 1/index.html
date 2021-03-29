@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multi Step Form</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div id="pg1" class="page">
+                <form>
+                    <lable>Firstname : </lable><input id="fname" place="Firstname"><br><br>
+                    <lable>Lastname : </lable><input id="fname" place="Firstname"><br><br>
+                </form>
+                <button onclcick="next()" class="right">Next</button>
+            </div>
+<br>
+            <div id="pg2" class = "page">
+                <form>
+                    <label>Email : </label><input id="email" place="Email"><br><br>
+                    <label>Phone : </label><input id="phone" place="Phone"><br><br>
+                </form>
+                <div class="inline">
+                    <input type="submit" onclcick="prev()" class="leftcorner" value="Prev">
+                    <input type="submit" onclcick="next()" class="rightcorner" value="Next">
+                </div>
+            </div>
+
+            <div id="pg3" class = "page">
+                <form>
+                    <label>Country : </label>
+                    <select id="country">
+                        <option value=””>Select Country</option>
+                        <option value=”INDIA”>INDIA</option>
+                        <option value=”UK”>UK</option>
+                        <option value=”CHINA”>CHINA</option>
+                        <option value=”EUROPE”>EUROPE</option>
+                    </select><br><br>
+                    <label>State : </label>
+                    <select id="state">
+                        <option value=””>Select State</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Dheli">Dheli</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Rajastan">Rajastan</option>
+                    </select>
+                </form>
+                <div class="inline">
+                    <input type="submit" onclcick="prev()" class="leftcorner" value="Prev">
+                    <input type="submit" onclcick="prev()" class="rightcorner" value="Next">
+                </div>
+            </div>
+
+            <div id="pg4" class="Page">
+                <h2>DETAILS</h2>
+                <div id = "outfname"></div>
+                <div id = "outlname"></div>
+                <div id = "outemail"></div>
+                <div id = "outphone"></div>
+                <div id = "outcountry"></div>
+                <div id = "outstate"></div>
+            </div>
+        </div>
+    </body>
+</html>
